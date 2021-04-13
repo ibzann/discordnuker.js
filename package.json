@@ -1,0 +1,16 @@
+{
+  "name": "discordnuker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ibzan#0286",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0"
+  }
+}
