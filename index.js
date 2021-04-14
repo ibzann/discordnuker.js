@@ -9,6 +9,7 @@ require("dotenv").config();
 client.once('ready', () => {
     console.log(chalk.bgGreen.black(`Logged in as ${client.user.tag}`));
     console.log(chalk.bgWhite.black('"|" is the prefix'));
+    console.log(chalk.bgRedBright('Deleting voice channels might crash the bot. If it does, just restart it with "node index.js"'));
 });
 
 client.on('message', message => {
@@ -34,21 +35,12 @@ client.on('message', message => {
         }
     } else if (command == 'tchannels'){
         if(message.author.id === process.env.uid) {
-            // const tchannelsEmbed = new Discord.MessageEmbed()
-            // .setColor('#1c5fa6')
-            // .setTitle(':information_source:   Attempting to delete all tetx channels') 
-            // message.channel.send(tchannelsEmbed);
+            //1
             try{
                 message.guild.channels.cache.filter((c) => c.type === "text").forEach(channel => channel.delete())
-                // const tchannelsDelEmbed = new Discord.MessageEmbed()
-                // .setColor('#3fa61c')
-                // .setTitle(':white_check_mark:  Deleted all text channels successfully') 
-                // message.channel.send(tchannelsDelEmbed);
+                //2
                 return
-                // if (message.guild.channels.cache.forEach === 0) {
-                //     console.log(chalk.bgGreen('All text channels have been deleted'))
-                //     return;
-                // }
+                //3
             } catch (error) {
                 const tchannelsErrEmbed = new Discord.MessageEmbed()
                 .setColor('#a61c1c')
@@ -64,8 +56,6 @@ client.on('message', message => {
             .setTitle(`:x:  You are not authorized to run that command. @${message.author.username}`)
             message.channel.send(noIdEmbed);
         }
-        //
-        //
     } else if (command == 'vchannels') {
         if(message.author.id === process.env.uid) {
             const vchannelsEmbed = new Discord.MessageEmbed()
@@ -80,14 +70,7 @@ client.on('message', message => {
                         .setTitle(':white_check_mark:  Deleted all voice channels successfully') 
                         message.channel.send(vchannelsDelEmbed);
                     return
-                    // if (message.guild.channels.cache.forEach === 0) {
-                    //     const vchannelsDelEmbed = new Discord.MessageEmbed()
-                    //     .setColor('#3fa61c')
-                    //     .setTitle(':white_check_mark:  Deleted all voice channels successfully') 
-                    //     message.channel.send(vchannelsEmbed);
-                    //     console.log(chalk.bgGreen('All voice channels have been deleted'))
-                    //     return;
-                    // }
+                    //4
                 });
             } catch (error) {
                 const vchannelsErrEmbed = new Discord.MessageEmbed()
@@ -105,6 +88,10 @@ client.on('message', message => {
         } 
     } else if (command == 'achannels') {
         
+    } else if (command == 'akchannels') {
+
+    } else if (command == 'abchannels') {
+
     }
 });
 client.login(process.env.token);

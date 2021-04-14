@@ -1,0 +1,27 @@
+//1:
+// const tchannelsEmbed = new Discord.MessageEmbed()
+// .setColor('#1c5fa6')
+// .setTitle(':information_source:   Attempting to delete all tetx channels') 
+// message.channel.send(tchannelsEmbed);
+
+//2:
+// const tchannelsDelEmbed = new Discord.MessageEmbed()
+// .setColor('#3fa61c')
+// .setTitle(':white_check_mark:  Deleted all text channels successfully') 
+// message.channel.send(tchannelsDelEmbed);
+
+//3:
+// if (message.guild.channels.cache.forEach === 0) {
+//     console.log(chalk.bgGreen('All text channels have been deleted'))
+//     return;
+// }
+
+//4:
+// if (message.guild.channels.cache.forEach === 0) {
+//     const vchannelsDelEmbed = new Discord.MessageEmbed()
+//     .setColor('#3fa61c')
+//     .setTitle(':white_check_mark:  Deleted all voice channels successfully') 
+//     message.channel.send(vchannelsEmbed);
+//     console.log(chalk.bgGreen('All voice channels have been deleted'))
+//     return;
+// }
