@@ -1,3 +1,4 @@
+//instal discord.js, chalk, and dotenv via npm for this to work
 const Discord = require('discord.js');
 const chalk = require('chalk');
 const client = new Discord.Client();
