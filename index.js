@@ -1,4 +1,4 @@
-//instal discord.js, chalk, and dotenv via npm for this to work
+//install discord.js, chalk, and dotenv via npm for this to work
 const Discord = require('discord.js');
 const chalk = require('chalk');
 const client = new Discord.Client();
@@ -8,9 +8,9 @@ const { bgGray, bgGreen } = require('chalk');
 require("dotenv").config();
 
 client.once('ready', () => {
-    console.log(chalk.bgGreen.black(`Logged in as ${client.user.tag}`));
-    console.log(chalk.bgWhite.black('"|" is the prefix'));
-    console.log(chalk.bgRedBright('Deleting voice channels might crash the bot. If it does, just restart it with "node index.js"'));
+    console.log(chalk.bgGreen.black(`[info] Logged in as ${client.user.tag}`));
+    console.log(chalk.bgWhite.black('[info] "|" is the prefix'));
+    console.log(chalk.bgYellowBright.black('[alert] If you get a DiscordAPIError then it\'s completely fine. Just restart the bot.'));
 });
 
 client.on('message', message => {
@@ -38,7 +38,8 @@ client.on('message', message => {
         if(message.author.id === process.env.uid) {
             //1
             try{
-                message.guild.channels.cache.filter((c) => c.type === "text").forEach(channel => channel.delete())
+                message.guild.channels.cache.filter((c) => c.type === "text").forEach(channel => channel.delete());
+                console.log(chalk.bgGreen.black('[success] Deleted all text channels successfully!'));
                 //2
                 return
                 //3
@@ -66,6 +67,7 @@ client.on('message', message => {
             try{
                 message.guild.channels.cache.forEach((channel) => {
                     message.guild.channels.cache.filter((c) => c.type === "voice").forEach(channel => channel.delete());
+                    console.log(chalk.bgGreen.black('[success] Deleted a voice channels successfully!'));
                         const vchannelsDelEmbed = new Discord.MessageEmbed()
                         .setColor('#3fa61c')
                         .setTitle(':white_check_mark:  Deleted all voice channels successfully') 
@@ -88,11 +90,32 @@ client.on('message', message => {
             message.channel.send(noIdEmbed);
         } 
     } else if (command == 'achannels') {
-        
+        if(message.author.id === process.env.uid) {
+            // code here
+        } else {
+            const noIdEmbed = new Discord.MessageEmbed()
+            .setColor('#a61c1c')
+            .setTitle(`:x:  You are not authorized to run that command. @${message.author.username}`)
+            message.channel.send(noIdEmbed);
+        }
     } else if (command == 'akchannels') {
-
+        if(message.author.id === process.env.uid) {
+            // code here
+        } else {
+            const noIdEmbed = new Discord.MessageEmbed()
+            .setColor('#a61c1c')
+            .setTitle(`:x:  You are not authorized to run that command. @${message.author.username}`)
+            message.channel.send(noIdEmbed);
+        }
     } else if (command == 'abchannels') {
-
+        if(message.author.id === process.env.uid) {
+            // code here
+        } else {
+            const noIdEmbed = new Discord.MessageEmbed()
+            .setColor('#a61c1c')
+            .setTitle(`:x:  You are not authorized to run that command. @${message.author.username}`)
+            message.channel.send(noIdEmbed);
+        }
     }
 });
 client.login(process.env.token);
