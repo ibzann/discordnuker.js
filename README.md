@@ -26,4 +26,4 @@ Note: You will only have to do this once and never again.</p>
 </ul>
 <p>After you're done (without any errors) make a application at <a href="https://discord.com/developers/applications">discord/developers/applications.</a> Click the "Bot" button on the left menu. Copy your token into the .env file and get your user id too in the env file. Finally run "node index.js" in the command prompt (cmd).</p>
 <h1>License</h1>
-<p>discordnuker.js is licensed under a [] license. This means []</p>
+<p>discordnuker.js is under the AGPL-3.0 License.</p>
