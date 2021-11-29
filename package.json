@@ -1,12 +1,12 @@
 {
   "name": "discordnuker",
   "version": "1.0.0",
-  "description": "",
+  "description": "very cool discord nuking script that crashes when you get ratlimited",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.rewritten.js"
   },
-  "author": "Ibzan#0286",
+  "author": "astral#0286",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.0",
