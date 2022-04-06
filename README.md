@@ -22,7 +22,7 @@ Note: You will only have to do this once and never again.</p>
 <ul>
   <li>npm install discord.js</li>
   <li>npm install chalk</li>
-  <li>nom install dotenv</li>
+  <li>npm install dotenv</li>
 </ul>
 <p>After you're done (without any errors) make a application at <a href="https://discord.com/developers/applications">discord/developers/applications.</a> Click the "Bot" button on the left menu. Copy your token into the .env file and get your user id too in the env file. Finally run "node index.js" in the command prompt (cmd).</p>
 <h1>License</h1>
